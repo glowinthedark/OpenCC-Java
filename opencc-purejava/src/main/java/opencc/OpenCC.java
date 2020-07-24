@@ -11,14 +11,16 @@ public class OpenCC {
 	private List<Converter> converterList = new ArrayList<>();
 	private boolean isConversionSet;
 
-	public void setConversion(String conversionCode) {
+	public OpenCC setConversion(String conversionCode) {
 		loadConfig(conversionCode);
 		isConversionSet = true;
+		return this;
 	}
 
-	public void setConversion(ConversionType conversionType) {
+	public OpenCC setConversion(ConversionType conversionType) {
 		loadConfig(conversionType);
 		isConversionSet = true;
+		return this;
 	}
 
 	private void loadConfig(ConversionType conversionType) {
