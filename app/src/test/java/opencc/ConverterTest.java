@@ -9,8 +9,8 @@ import org.junit.Test;
 /**
  * OpenCCTest
  */
-public class OpenCCTest {
-	private OpenCC openCC;
+public class ConverterTest {
+    private OpenCC openCC;
 
     @Before
     public void setUp() {
@@ -21,13 +21,13 @@ public class OpenCCTest {
     public void tearDown() {
         openCC = null;
     }
-	
+
     @Test
     public void testConvertNothing() {
         OpenCC openCC = new OpenCC();
         assertTrue(openCC.convert("This is a book. That is an apple.").contentEquals("This is a book. That is an apple."));
     }
-    
+
     @Test
     public void testHK2S() {
         openCC.setConversion(ConversionType.hk2s);
