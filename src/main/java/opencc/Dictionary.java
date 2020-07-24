@@ -39,8 +39,8 @@ public class Dictionary {
 	}
 
 	public void load(String dictName) {
-		this.isPhrase = dictName.contains("Phrases");
-		String filename = "/dictionary/" + dictName;
+		this.isPhrase = dictName.contains("phrases");
+		String filename = "/dictionary/opencc_" + dictName + ".txt";
 		try (InputStream inputStream = Utility.getInputStream(this, filename)) {
 			try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8))) {
 				String line = reader.readLine();

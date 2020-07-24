@@ -11,21 +11,28 @@ public class OpenCC {
 	private List<Converter> converterList = new ArrayList<>();
 	private boolean isConversionSet;
 
-	public void setConversion(String conversion) {
-		loadConfig(conversion);
+	public void setConversion(String conversionCode) {
+		loadConfig(conversionCode);
 		isConversionSet = true;
 	}
 
-	private void loadConfig(String conversion) {
-		ConfigLoader configLoader = new ConfigLoader();
-		Config config = configLoader.load(conversion);
-//		System.out.println(config.getName());
-		List<List<String>> conversionList = config.getConversionChain();
+	public void setConversion(ConversionType conversionType) {
+		loadConfig(conversionType);
+		isConversionSet = true;
+	}
+
+	private void loadConfig(ConversionType conversionType) {
+		List<String>[] dictGroup = conversionType.getDictGroup();
+
 		converterList.clear();
-		for (List<String> dictNameList : conversionList) {
+		for (List<String> dictNameList : dictGroup) {
 			Converter converter = new Converter(dictNameList);
 			converterList.add(converter);
 		}
+	}
+
+	private void loadConfig(String conversionCode) {
+		loadConfig(ConversionType.valueOf(conversionCode));
 	}
 
 	public String convert(String input) {

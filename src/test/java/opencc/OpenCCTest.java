@@ -30,7 +30,7 @@ public class OpenCCTest {
     
     @Test
     public void testHK2S() {
-        openCC.setConversion("hk2s");
+        openCC.setConversion(ConversionType.hk2s);
         String toConvert = "香煙（英語：Cigarette），為煙草製品的一種。滑鼠是一種很常見及常用的電腦輸入設備。";
         String expected = "香烟（英语：Cigarette），为烟草制品的一种。滑鼠是一种很常见及常用的电脑输入设备。";
         assertEquals(expected, openCC.convert(toConvert));
@@ -38,7 +38,7 @@ public class OpenCCTest {
 
     @Test
     public void testS2HK() {
-        openCC.setConversion("s2hk");
+        openCC.setConversion(ConversionType.s2hk);
         String toConvert = "香烟（英语：Cigarette），为烟草制品的一种。鼠标是一种很常见及常用的电脑输入设备。";
         String expected = "香煙（英語：Cigarette），為煙草製品的一種。鼠標是一種很常見及常用的電腦輸入設備。";
         assertEquals(expected, openCC.convert(toConvert));
@@ -54,7 +54,7 @@ public class OpenCCTest {
 
     @Test
     public void testS2TW() {
-        openCC.setConversion("s2tw");
+        openCC.setConversion(ConversionType.s2tw);
         String toConvert = "香烟（英语：Cigarette），为烟草制品的一种。鼠标是一种很常见及常用的电脑输入设备。";
         String expected = "香菸（英語：Cigarette），為菸草製品的一種。鼠標是一種很常見及常用的電腦輸入設備。";
         assertEquals(expected, openCC.convert(toConvert));
@@ -62,7 +62,7 @@ public class OpenCCTest {
 
     @Test
     public void testS2TWP() {
-        openCC.setConversion("s2twp");
+        openCC.setConversion(ConversionType.s2twp);
         String toConvert = "香烟（英语：Cigarette），为烟草制品的一种。內存是一种很常见及常用的电脑输入设备。";
         String expected = "香菸（英語：Cigarette），為菸草製品的一種。記憶體是一種很常見及常用的電腦輸入裝置。";
         assertEquals(expected, openCC.convert(toConvert));
