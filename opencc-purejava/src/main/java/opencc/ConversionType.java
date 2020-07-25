@@ -4,10 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 
-/*
-* Defines the dictionaries for all the conversion flavours.
-*
-* */
+/**
+ * Defines the dictionaries for all the conversion flavours.
+ */
 
 public enum ConversionType {
     hk2s("Traditional Chinese (Hong Kong standard) to Simplified Chinese",
@@ -24,11 +23,11 @@ public enum ConversionType {
 
     s2twp("Simplified Chinese to Traditional Chinese (Taiwan standard, with phrases)",
             Arrays.asList("st_phrases", "st_characters"),
-            Arrays.asList("tw_phrases","tw_variants")),
+            Arrays.asList("tw_phrases", "tw_variants")),
 
     s2hk("Simplified Chinese to Traditional Chinese (Hong Kong standard)",
             Arrays.asList("st_phrases", "st_characters"),
-            Arrays.asList("hk_variants_phrases","hk_variants")),
+            Arrays.asList("hk_variants_phrases", "hk_variants")),
 
 
     t2s("Traditional Chinese to Simplified Chinese",
@@ -49,13 +48,12 @@ public enum ConversionType {
             Arrays.asList("tw_variants")),
 
     t2hk("Traditional Chinese to Traditional Chinese (Hong Kong standard)",
-            Arrays.asList("hk_variants"))
-    ;
+            Arrays.asList("hk_variants"));
 
     private final String name;
     private final List<String>[] dictGroup;
 
-    ConversionType(String name, List<String>... dictGroup ) {
+    ConversionType(String name, List<String>... dictGroup) {
         this.name = name;
         this.dictGroup = dictGroup;
     }

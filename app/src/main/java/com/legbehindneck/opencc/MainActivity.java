@@ -1,16 +1,13 @@
 package com.legbehindneck.opencc;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import opencc.OpenCC;
 
 
-public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = "OpenCC";
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +18,5 @@ public class MainActivity extends AppCompatActivity {
         CharSequence origText = text.getText();
         OpenCC openCC = new OpenCC();
         text.setText(origText + " => " + openCC.convert(origText.toString()));
-//        Log.d(TAG, "onCreate: " + Converter.convert("42"));
     }
 }
